@@ -127,10 +127,15 @@ All data stored in `~PROJECT_ROOT/data` folder
 
 ### API Commands
 
-<b>Count Stats for XML</b><br>
+* <b>Count Stats for XML (counter.py)</b><br>
 `$ python counter.py <FILENAME>.xml`<br>
-<br>
-<b>Train using Default Tagger Model</b><br>
+Example: `$ python counter.py data/0/reviews.xml`<br>
+* <b>Train using Default Tagger Model (default-tag-trainer.py)</b><br>
 `$ python default-tag-trainer.py data/x/<RAW>.xml data/x/trained.xml`<br>
-<br>
-<b>Train using previously trained XML</b><br>
+Example: `$ python default-tag-trainer.py data/1/test1.xml data/1/trained1.xml`<br>
+* <b>Train using previously trained XML</b> (trainer-tag-trainer.py)<br>
+`$ python trained-tag-trainer.py <INT_NUM_OF_TRAINED_FILES> <TRAINED_FILE_X> * <TEST_FILE> <TRAINED_FILE>`<br>
+Example for tagging stage 2, need to pass trained+corrected stage 1 file to train a stage 2 test file:<br>
+`$ python trained-tag-trainer.py 1 corrected1.xml test2.xml trained2.xml`<br>
+Example for tagging stage 4, need to pass trained+corrected stage 1,2,3 files to train a stage 4 test file:<br>
+`$ python trained-tag-trainer.py 3 corrected1.xml corrected2.xml corrected3.xml test4.xml trained4.xml`<br>
