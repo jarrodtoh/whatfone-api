@@ -6,7 +6,7 @@ API of Whatfone
 ### Getting Started
 
 <b>Install Python:</b><br>
-1) Goto http://python.org/download/ and download the latest Python 2.x (32bit) installer<br>
+1) Goto http://python.org/download/ and download the latest Python 2.7.5 (32bit) installer<br>
 2) Install Python<br>
 3) (Windows) Add “c:\python27” and “c:\python27\scripts” into PATH (the latter is for your python packages)
 * Windows 7 and below:
