@@ -63,8 +63,64 @@ All data stored in `~PROJECT_ROOT/data` folder
   <tr>
     <td>2</td>
     <td>Tag Stage 2</td>
-    <td>27</td>
-    <td>1221</td>
+    <td>26</td>
+    <td>939</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Tag Stage 3</td>
+    <td>9</td>
+    <td>1043</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Tag Stage 4</td>
+    <td>47</td>
+    <td>969</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Tag Stage 5</td>
+    <td>29</td>
+    <td>1028</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Tag Stage 6</td>
+    <td>20</td>
+    <td>1009</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Tag Stage 7</td>
+    <td>28</td>
+    <td>972</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>Tag Stage 8</td>
+    <td>32</td>
+    <td>1097</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>Tag Stage 9</td>
+    <td>32</td>
+    <td>1121</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>Tag Stage 10</td>
+    <td>16</td>
+    <td>1517</td>
     <td></td>
   </tr>
 </table>
