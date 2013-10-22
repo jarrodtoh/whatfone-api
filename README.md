@@ -28,3 +28,44 @@ For <b>Mac</b><br>
 1) Setuptools (https://pypi.python.org/pypi/setuptools)<br>
 2) After installing setuptools, goto terminal and `$ sudo easy_install pip` to install Pip<br>
 3) After installing pip, goto terminal and `$ sudo pip install nltk`<br>
+
+<br>
+<b>NLTK Treebank Download</b><br>
+1) Goto terminal and `$ python`, it will go into python terminal mode.<br>
+2) Type `$ import nltk`<br>
+3) Type `$ nltk.download()`, and a new window will appear.<br>
+4) Go under "All Packages", and download "maxent_treebank_pos_tagger"<br>
+
+### Corpora FAQ
+All data stored in `~PROJECT_ROOT/data` folder
+<table>
+  <tr>
+    <td>Subfolder</td>
+    <td>Description</td>
+    <td>Docs</td>
+    <td>Tokens</td>
+    <td>Status</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>Original copy</td>
+    <td>4,999</td>
+    <td>200,003</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Tag Stage 1</td>
+    <td>25</td>
+    <td>1057</td>
+    <td>IN-PROGRESS</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Tag Stage 2</td>
+    <td>27</td>
+    <td>1221</td>
+    <td></td>
+  </tr>
+</table>
+Total: 4999 reviews, 200,003 tokens<br>
