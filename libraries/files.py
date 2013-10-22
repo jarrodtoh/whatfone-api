@@ -12,9 +12,9 @@ def export_to_xml(reviews, filename):
     """
 
     # define xml format
-    root = Element('reviews') # set root element
-    for rev in reviews: # crawl each review
-        doc = SubElement(root, 'doc', {'id': str(rev.id)}) # doc as 2nd level
+    root = Element('reviews')  # set root element
+    for rev in reviews:  # crawl each review
+        doc = SubElement(root, 'doc', {'id': str(rev.id)})  # doc as 2nd level
         # third level - attributes of doc
         attr_source = SubElement(doc, 'source')
         attr_source.text = rev.source

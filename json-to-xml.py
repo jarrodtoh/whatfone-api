@@ -23,7 +23,7 @@ if len(sys.argv) == 2:
             row = re.sub('\r\n', '', row)
             row = row.strip()
             content += row.encode('ascii', 'ignore') + ' '
-        content = content.strip()
+        content = content.lower().strip()
 
         new_review = Review(id_count, source, date, title, content)
 
