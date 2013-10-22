@@ -68,4 +68,13 @@ All data stored in `~PROJECT_ROOT/data` folder
     <td></td>
   </tr>
 </table>
-Total: 4999 reviews, 200,003 tokens<br>
+
+### API Commands
+
+<b>Count Stats for XML</b><br>
+`$ python counter.py <FILENAME>.xml`<br>
+<br>
+<b>Train using Default Tagger Model</b><br>
+`$ python default-tag-trainer.py data/x/<RAW>.xml data/x/trained.xml`<br>
+<br>
+<b>Train using previously trained XML</b><br>
