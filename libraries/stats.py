@@ -15,4 +15,8 @@ def corpora_stats(reviews):
         doc_count += 1
         token_count += len(content_tokens)
 
+        if token_count > 10000:
+            print review.id
+            break
+
     return doc_count, token_count
