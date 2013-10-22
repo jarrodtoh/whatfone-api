@@ -40,11 +40,11 @@ For <b>Mac</b><br>
 All data stored in `~PROJECT_ROOT/data` folder
 <table>
   <tr>
-    <td>Subfolder</td>
-    <td>Description</td>
-    <td>Docs</td>
-    <td>Tokens</td>
-    <td>Status</td>
+    <td><b>Subfolder</b></td>
+    <td><b>Description</b></td>
+    <td><b>Docs</b></td>
+    <td><b>Tokens</b></td>
+    <td><b>Status</b></td>
   </tr>
   <tr>
     <td>0</td>
@@ -139,3 +139,41 @@ Example for tagging stage 2, need to pass trained+corrected stage 1 file to trai
 `$ python trained-tag-trainer.py 1 corrected1.xml test2.xml trained2.xml`<br>
 Example for tagging stage 4, need to pass trained+corrected stage 1,2,3 files to train a stage 4 test file:<br>
 `$ python trained-tag-trainer.py 3 corrected1.xml corrected2.xml corrected3.xml test4.xml trained4.xml`<br>
+
+### POS-Tagging FAQ
+Currently, we uses NLTK for POS-tagging. 
+* Codes covering POS-Tagging:
+ - Library File: `libraries\tags.py`
+ - API Wrapper Files: `default-tag-trainer.py` (Default Tagging Model) and `trained-tag-trainer.py` (Custom Model via trained tags)
+* What do we need to do?
+ - Tagging consists of 10 stages. For each stage, there are a series of steps to be completed. Here's the steps:
+ <table>
+   <tr>
+      <td><b>Stage</b></td>
+      <td><b>Steps</b></td>
+   </tr>
+   <tr>
+      <td>1</td>
+      <td>
+        1) `$ python default-tag-trainer.py data/1/test1.xml data/1/trained1.xml`<br>
+        2) Manually correct `trained1.xml` and saved as `corrected1.xml`<br>
+      </td>
+   </tr>
+   <tr>
+      <td>2</td>
+      <td>
+        1) `$ python trained-tag-trainer.py 1 data/1/corrected1.xml data/2/test2.xml data/2/trained2.xml`<br>
+        2) Manually correct `trained2.xml` and saved as `corrected2.xml`<br>
+      </td>
+   </tr>
+   <tr>
+      <td>3</td>
+      <td>
+        1) `$ python trained-tag-trainer.py 2 data/1/corrected1.xml data/2/corrected2.xml data/3/test3.xml data/3/trained3.xml`<br>
+        2) Manually correct `trained2.xml` and saved as `corrected2.xml`<br>
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Blah Blah Blah...</td>
+   </tr>
+ </table>
