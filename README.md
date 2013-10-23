@@ -58,7 +58,7 @@ All data stored in `~PROJECT_ROOT/data` folder
     <td>Tag Stage 1</td>
     <td>25</td>
     <td>1057</td>
-    <td>IN-PROGRESS</td>
+    <td>DONE</td>
   </tr>
   <tr>
     <td>2</td>
