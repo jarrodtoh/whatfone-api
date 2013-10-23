@@ -1,4 +1,7 @@
 from nltk.tokenize import RegexpTokenizer
+from libraries import tags
+import nltk
+
 
 def corpora_stats(reviews):
     """
@@ -20,3 +23,26 @@ def corpora_stats(reviews):
             break
 
     return doc_count, token_count
+
+
+def tag_corrected(original, corrected):
+    count = 0 # total corrected tags
+    error = [] # list of review ids with error
+
+    for (o_review, c_review) in zip(original, corrected):
+        o_review_tags = []
+        for token in o_review.content.split():
+            o_review_tags.append(nltk.tag.str2tuple(token))
+
+        c_review_tags = []
+        for token in c_review.content.split():
+            c_review_tags.append(nltk.tag.str2tuple(token))
+
+        if len(o_review_tags) != len(c_review_tags):
+            error.append(o_review.id)
+        else:
+            for (o_tag, c_tag) in zip(o_review_tags, c_review_tags):
+                if o_tag != c_tag:
+                    count += 1
+
+    return count, error
