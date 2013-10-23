@@ -28,7 +28,8 @@ def tag_by_training(trained_reviews, test_reviews):
     unigram_tagger = nltk.UnigramTagger(train_sent)
 
     for test_review in test_reviews:
-        tagged_tokens = unigram_tagger.tag(test_review.content.split())
+        text = nltk.word_tokenize(test_review.content)
+        tagged_tokens = unigram_tagger.tag(text)
         tagged_content = ''
         for token in tagged_tokens:
             str_token = nltk.tuple2str(token, '/')

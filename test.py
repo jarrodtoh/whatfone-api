@@ -1,6 +1,6 @@
-from libraries import files
-s = ''
-for i in range(550, 601):
-    s += '"http://www.gsmarena.com/apple_iphone_5-reviews-4910p' + str(i) + '.php",\n'
+import nltk
 
-files.general_export(s, 'text.txt')
+s = 'this is a sentence.. please tokenize it. thanks!'
+
+ss = nltk.word_tokenize(s)
+print nltk.pos_tag(ss)
