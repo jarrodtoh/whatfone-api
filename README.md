@@ -141,7 +141,7 @@ Example for tagging stage 4, need to pass trained+corrected stage 1,2,3 files to
 `$ python trained-tag-trainer.py 3 corrected1.xml corrected2.xml corrected3.xml test4.xml trained4.xml`<br>
 * <b>Count Corrected Tags (count-corrected-tags.py)</b><br>
 `$ python count-corrected-tags.py trained.xml corrected.xml`<br>
-It will return <ul>corrected tag count</ul> and error review ID(s) if any. Error usually happens if the number of tags did not tally. 
+It will return <u>corrected tag count</u> and <u>error review ID(s)</u> if any. Error usually happens if the number of tags did not tally. 
 
 ### POS-Tagging FAQ
 Currently, we uses NLTK for POS-tagging. 
