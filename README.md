@@ -40,11 +40,11 @@ For <b>Mac</b><br>
 All data stored in `~PROJECT_ROOT/data` folder
 <table>
   <tr>
-    <td>Subfolder</td>
-    <td>Description</td>
-    <td>Docs</td>
-    <td>Tokens</td>
-    <td>Status</td>
+    <td><b>Subfolder</b></td>
+    <td><b>Description</b></td>
+    <td><b>Docs</b></td>
+    <td><b>Tokens</b></td>
+    <td><b>Status</b></td>
   </tr>
   <tr>
     <td>0</td>
@@ -127,10 +127,60 @@ All data stored in `~PROJECT_ROOT/data` folder
 
 ### API Commands
 
-<b>Count Stats for XML</b><br>
+* <b>Count Stats for XML (counter.py)</b><br>
 `$ python counter.py <FILENAME>.xml`<br>
-<br>
-<b>Train using Default Tagger Model</b><br>
+Example: `$ python counter.py data/0/reviews.xml`<br>
+* <b>Train using Default Tagger Model (default-tag-trainer.py)</b><br>
 `$ python default-tag-trainer.py data/x/<RAW>.xml data/x/trained.xml`<br>
-<br>
-<b>Train using previously trained XML</b><br>
+Example: `$ python default-tag-trainer.py data/1/test1.xml data/1/trained1.xml`<br>
+* <b>Train using previously trained XML</b> (trainer-tag-trainer.py)<br>
+`$ python trained-tag-trainer.py <INT_NUM_OF_TRAINED_FILES> <TRAINED_FILE_X> * <TEST_FILE> <TRAINED_FILE>`<br>
+Example for tagging stage 2, need to pass trained+corrected stage 1 file to train a stage 2 test file:<br>
+`$ python trained-tag-trainer.py 1 corrected1.xml test2.xml trained2.xml`<br>
+Example for tagging stage 4, need to pass trained+corrected stage 1,2,3 files to train a stage 4 test file:<br>
+`$ python trained-tag-trainer.py 3 corrected1.xml corrected2.xml corrected3.xml test4.xml trained4.xml`<br>
+
+### POS-Tagging FAQ
+Currently, we uses NLTK for POS-tagging. 
+* <b>Codes covering POS-Tagging</b>:
+ - Library File: `libraries\tags.py`
+ - API Wrapper Files: `default-tag-trainer.py` (Default Tagging Model) and `trained-tag-trainer.py` (Custom Model via trained tags)
+* <b>Handy POS Tag List</b>
+ - http://www.monlp.com/2011/11/08/part-of-speech-tags/
+* <b>What do we need to do?</b>
+ - Tagging consists of 10 stages. For each stage, there are a series of steps to be completed. Here's the steps:
+ <table>
+   <tr>
+      <td><b>Stage</b></td>
+      <td><b>Steps</b></td>
+   </tr>
+   <tr>
+      <td>1</td>
+      <td>
+        1) `$ python default-tag-trainer.py data/1/test1.xml data/1/trained1.xml`<br>
+        2) Manually correct `trained1.xml` and saved as `corrected1.xml`<br>
+      </td>
+   </tr>
+   <tr>
+      <td>2</td>
+      <td>
+        1) `$ python trained-tag-trainer.py 1 data/1/corrected1.xml data/2/test2.xml data/2/trained2.xml`<br>
+        2) Manually correct `trained2.xml` and saved as `corrected2.xml`<br>
+      </td>
+   </tr>
+   <tr>
+      <td>3</td>
+      <td>
+        1) `$ python trained-tag-trainer.py 2 data/1/corrected1.xml data/2/corrected2.xml data/3/test3.xml data/3/trained3.xml`<br>
+        2) Manually correct `trained2.xml` and saved as `corrected2.xml`<br>
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Blah Blah Blah...</td>
+   </tr>
+ </table>
+* <b>What if the token is not really formal English?</b>
+ - As mentioned by Prof. Kim, if it is "plz" instead of "please", tag it with the same tag. For this case, Adverb. So, `please/RB` equals `plz/RB`
+ - If it is Singlish, like "lah", "leh", "lor", use Interjection (`UH`) tag. Interjection means "exclamation" word. Examples of Interjection are: "Uhhuh", "Oh", "Damn".
+* <b>What if there's spelling error on the word?</b>
+ - Leave it as it is, tag it to the closest word you think it represents.
