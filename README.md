@@ -142,10 +142,12 @@ Example for tagging stage 4, need to pass trained+corrected stage 1,2,3 files to
 
 ### POS-Tagging FAQ
 Currently, we uses NLTK for POS-tagging. 
-* Codes covering POS-Tagging:
+* <b>Codes covering POS-Tagging</b>:
  - Library File: `libraries\tags.py`
  - API Wrapper Files: `default-tag-trainer.py` (Default Tagging Model) and `trained-tag-trainer.py` (Custom Model via trained tags)
-* What do we need to do?
+* <b>Handy POS Tag List</b>
+ - http://www.monlp.com/2011/11/08/part-of-speech-tags/
+* <b>What do we need to do?</b>
  - Tagging consists of 10 stages. For each stage, there are a series of steps to be completed. Here's the steps:
  <table>
    <tr>
@@ -177,3 +179,6 @@ Currently, we uses NLTK for POS-tagging.
       <td colspan="2">Blah Blah Blah...</td>
    </tr>
  </table>
+* <b>What if the token is not really formal English?</b>
+ - As mentioned by Prof. Kim, if it is "plz" instead of "please", tag it with the same tag. For this case, Adverb. So, `please/RB` equals `plz/RB`
+ - If it is Singlish, like "lah", "leh", "lor", use Interjection (`UH`) tag. Interjection means "exclamation" word. Examples of Interjection are: "Uhhuh", "Oh", "Damn".
