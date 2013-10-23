@@ -182,3 +182,5 @@ Currently, we uses NLTK for POS-tagging.
 * <b>What if the token is not really formal English?</b>
  - As mentioned by Prof. Kim, if it is "plz" instead of "please", tag it with the same tag. For this case, Adverb. So, `please/RB` equals `plz/RB`
  - If it is Singlish, like "lah", "leh", "lor", use Interjection (`UH`) tag. Interjection means "exclamation" word. Examples of Interjection are: "Uhhuh", "Oh", "Damn".
+* <b>What if there's spelling error on the word?</b>
+ - Leave it as it is, tag it to the closest word you think it represents.
