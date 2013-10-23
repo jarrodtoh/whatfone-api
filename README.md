@@ -58,7 +58,7 @@ All data stored in `~PROJECT_ROOT/data` folder
     <td>Tag Stage 1</td>
     <td>25</td>
     <td>1057</td>
-    <td>IN-PROGRESS</td>
+    <td>DONE</td>
   </tr>
   <tr>
     <td>2</td>
@@ -139,6 +139,9 @@ Example for tagging stage 2, need to pass trained+corrected stage 1 file to trai
 `$ python trained-tag-trainer.py 1 corrected1.xml test2.xml trained2.xml`<br>
 Example for tagging stage 4, need to pass trained+corrected stage 1,2,3 files to train a stage 4 test file:<br>
 `$ python trained-tag-trainer.py 3 corrected1.xml corrected2.xml corrected3.xml test4.xml trained4.xml`<br>
+* <b>Count Corrected Tags (count-corrected-tags.py)</b><br>
+`$ python count-corrected-tags.py trained.xml corrected.xml`<br>
+It will return <u>corrected tag count</u> and <u>error review ID(s)</u> if any. Error usually happens if the number of tags did not tally. 
 
 ### POS-Tagging FAQ
 Currently, we uses NLTK for POS-tagging. 
