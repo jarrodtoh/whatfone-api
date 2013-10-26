@@ -142,6 +142,9 @@ Example for tagging stage 4, need to pass trained+corrected stage 1,2,3 files to
 * <b>Count Corrected Tags (count-corrected-tags.py)</b><br>
 `$ python count-corrected-tags.py trained.xml corrected.xml`<br>
 It will return <u>corrected tag count</u> and <u>error review ID(s)</u> if any. Error usually happens if the number of tags did not tally. 
+* <b>Check for missing tags (check-missing-tags.py)</b><br>
+`$ python check-missing-tags.py <XML_FILE>`<br>
+If missing tag found, it will display on terminal. If the missing tag is non-word, it is fine. Else, go tag that word.
 
 ### POS-Tagging FAQ
 Currently, we uses NLTK for POS-tagging. 
@@ -185,5 +188,6 @@ Currently, we uses NLTK for POS-tagging.
 * <b>What if the token is not really formal English?</b>
  - As mentioned by Prof. Kim, if it is "plz" instead of "please", tag it with the same tag. For this case, Adverb. So, `please/RB` equals `plz/RB`
  - If it is Singlish, like "lah", "leh", "lor", use Interjection (`UH`) tag. Interjection means "exclamation" word. Examples of Interjection are: "Uhhuh", "Oh", "Damn".
+ - If it is email address or something non-word and non-punctuation, tag it as "Foreign Word" (`FW`).
 * <b>What if there's spelling error on the word?</b>
  - Leave it as it is, tag it to the closest word you think it represents.
