@@ -72,14 +72,14 @@ All data stored in `~PROJECT_ROOT/data` folder
     <td>Tag Stage 3</td>
     <td>9</td>
     <td>1043</td>
-    <td>Trained, haven't start correction</td>
+    <td>DONE</td>
   </tr>
   <tr>
     <td>4</td>
     <td>Tag Stage 4</td>
     <td>47</td>
     <td>969</td>
-    <td></td>
+    <td>Training</td>
   </tr>
   <tr>
     <td>5</td>
