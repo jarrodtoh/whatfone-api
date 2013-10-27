@@ -86,14 +86,14 @@ All data stored in `~PROJECT_ROOT/data` folder
     <td>Tag Stage 5</td>
     <td>29</td>
     <td>1028</td>
-    <td>Trained, not corrected.</td>
+    <td>DONE</td>
   </tr>
   <tr>
     <td>6</td>
     <td>Tag Stage 6</td>
     <td>20</td>
     <td>1009</td>
-    <td></td>
+    <td>Trained, not corrected yet</td>
   </tr>
   <tr>
     <td>7</td>
@@ -139,9 +139,11 @@ Example for tagging stage 2, need to pass trained+corrected stage 1 file to trai
 `$ python trained-tag-trainer.py 1 corrected1.xml test2.xml trained2.xml`<br>
 Example for tagging stage 4, need to pass trained+corrected stage 1,2,3 files to train a stage 4 test file:<br>
 `$ python trained-tag-trainer.py 3 corrected1.xml corrected2.xml corrected3.xml test4.xml trained4.xml`<br>
-* <b>Count Corrected Tags (count-corrected-tags.py)</b><br>
-`$ python count-corrected-tags.py trained.xml corrected.xml`<br>
-It will return <u>corrected tag count</u> and <u>error review ID(s)</u> if any. Error usually happens if the number of tags did not tally. 
+* <b>Analyze Tags for Precision, Recall, F1 (analyze-tags.py)</b><br>
+`$ python analyze-tags.py trained.xml corrected.xml`<br>
+Precision = total_correct_tags (before correction) / total tokens<br>
+Recall = total_original_tagged_tokens / total_tokens<br>
+F1 = 2 * ((precision * recall) / (precision + recall))<br>
 * <b>Check for missing tags (check-missing-tags.py)</b><br>
 `$ python check-missing-tags.py <XML_FILE>`<br>
 If missing tag found, it will display on terminal. If the missing tag is non-word, it is fine. Else, go tag that word.
