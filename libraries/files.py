@@ -80,5 +80,5 @@ def general_export(content, filename):
     """
 
     file = open(filename, 'w')
-    file.write(content)
+    file.write(str(content))
     file.close()
