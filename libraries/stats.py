@@ -68,14 +68,13 @@ def tag_analysis(original, corrected):
 
     # precision
     total_original_tagged = float(len(o_review_tags))
-    total_tokens = float(len(c_review_tags))
     total_correct = total_original_tagged - error
-    precision = total_correct/total_tokens
+    precision = total_correct/total_original_tagged
 
     # recall
     total_tokens = float(len(c_review_tags))
     print total_tokens, total_original_tagged
-    recall = total_original_tagged/total_tokens
+    recall = total_correct/total_tokens
 
     # F1 Measure
     f1 = F1(precision, recall)
